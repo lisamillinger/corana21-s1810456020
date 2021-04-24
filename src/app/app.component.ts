@@ -3,17 +3,7 @@ import { Location } from "./shared/location";
 
 @Component({
   selector: "bs-root",
-  template: `
-    <app-location-list
-      *ngIf="listOn"
-      (showDetailsEvent)="showDetails($event)"
-    ></app-location-list>
-    <app-location-details
-      *ngIf="detailsOn"
-      [location]="location"
-      (showListEvent)="showList()"
-    ></app-location-details>
-  `
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   listOn = true;
