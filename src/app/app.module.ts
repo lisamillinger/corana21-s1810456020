@@ -7,10 +7,12 @@ import { HelloComponent } from './hello.component';
 import { LocationListComponent } from './location-list/location-list.component';
 import { LocationListItemComponent } from './location-list-item/location-list-item.component';
 import { LocationDetailsComponent } from './location-details/location-details.component';
+import { allLocationsService } from './shared/all-locations.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, HelloComponent, LocationListComponent, LocationListItemComponent, LocationDetailsComponent],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [allLocationsService]
 })
 export class AppModule { }

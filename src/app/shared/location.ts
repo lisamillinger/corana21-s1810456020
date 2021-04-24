@@ -1,6 +1,7 @@
 import { Vaccination } from "./vaccination";
 
 export class Location {
+  location: Location;
   constructor(
     public id: number,
     public post_code: number,

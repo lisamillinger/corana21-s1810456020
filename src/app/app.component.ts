@@ -6,8 +6,10 @@ import { Location } from "./shared/location";
   template: `
     <app-location-list
       *ngIf="listOn"
-      (showDetailsEvent)="showDetails($event)"></app-location-list>
-    <app-location-details *ngIf="detailsOn"
+      (showDetailsEvent)="showDetails($event)"
+    ></app-location-list>
+    <app-location-details
+      *ngIf="detailsOn"
       [location]="location"
       (showListEvent)="showList()"
     ></app-location-details>
@@ -25,6 +27,7 @@ export class AppComponent {
   }
 
   showDetails(location: Location) {
+    this.location = location;
     this.listOn = false;
     this.detailsOn = true;
   }
