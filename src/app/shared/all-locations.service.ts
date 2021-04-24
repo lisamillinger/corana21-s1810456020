@@ -45,4 +45,8 @@ export class allLocationsService {
   getAll() {
     return this.locations;
   }
+
+  getSingle(title : string) : Location {
+    return this.locations.find(location => location.title === title);
+  }
 }
