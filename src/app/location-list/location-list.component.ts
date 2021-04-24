@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { Vaccination } from "../shared/vaccination";
 import { Location } from "../shared/location";
 
@@ -9,6 +9,8 @@ import { Location } from "../shared/location";
 })
 export class LocationListComponent implements OnInit {
   locations: Location[];
+
+  @Output() showDetailsEvent = new EventEmitter<Location>();
 
   ngOnInit() {
     this.locations = [
@@ -41,5 +43,9 @@ export class LocationListComponent implements OnInit {
         [new Vaccination(3, "Impfung03", new Date(2022, 9, 9), 12, 1, false)]
       )
     ];
+  }
+
+  showDetails(location: Location) {
+    this.showDetailsEvent.emit(location);
   }
 }

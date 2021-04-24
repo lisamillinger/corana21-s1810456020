@@ -1,0 +1,23 @@
+<p> hello from the list </p>
+<button (click)="showLocationList()" class="ui red button">Zurück zur Listenansicht</button>
+
+<h1 class="ui header">{{ location.title }} </h1>
+<div class="ui grid" *ngIf="location">
+  <p>hello again </p>
+  <div class="twelve wide column">
+    <h1 class="ui header">{{ location.title }} </h1>
+    <h3 class="ui header"> {{ location.address }} </h3>
+
+    <span *ngFor="let vaccination of location.vaccinations">
+          <b>{{ vaccination.title }} </b> <br>
+          <b>{{ vaccination.date }} </b> <br>
+          <b>{{ vaccination.max_participants }} </b> <br>
+          <b> {{ vaccination.current_registrations }} </b><br>
+        </span>
+
+
+  </div>
+
+  <button (click)="showLocationList()" class="ui red button">Zurück zur Listenansicht</button>
+
+</div>

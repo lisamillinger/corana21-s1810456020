@@ -3,22 +3,6 @@
 </p>
 
 <div class="ui middle aligned section divided list">
-  <a *ngFor="let location of locations" class="item">
-    <div class="content">
-      <div class="header">
-        {{ location.title }}
-      </div>
-      <div class="description">
-        {{ location.address }}
-        {{ location.post_code }}
-        {{ location.city }}
-      </div>
-      <div class="metadata">
-        <span *ngFor="let vaccination of location.vaccinations">
-          <b>{{ vaccination.title }} </b> <br>
-          <b>WANN? </b> {{ vaccination.date }}
-        </span>
-      </div>
-    </div>
-  </a>
+  <a *ngFor="let location of locations" class="item app-location-list-item" [location]="location"
+  (click)="showDetails(location)"></a>
 </div>
