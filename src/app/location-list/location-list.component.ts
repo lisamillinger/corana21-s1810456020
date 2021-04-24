@@ -1,15 +1,14 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { Vaccination } from "../shared/vaccination";
 import { Location } from "../shared/location";
-import { allLocationsService } from '../shared/all-locations.service';
+import { allLocationsService } from "../shared/all-locations.service";
 
 @Component({
   selector: "app-location-list",
   templateUrl: "./location-list.component.html",
-  styleUrls: ["./location-list.component.css"]
+  styleUrls: []
 })
 export class LocationListComponent implements OnInit {
-  
   locations: Location[];
   @Output() showDetailsEvent = new EventEmitter<Location>();
 
