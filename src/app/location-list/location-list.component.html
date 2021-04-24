@@ -4,5 +4,5 @@
 
 <div class="ui middle aligned section divided list">
   <a *ngFor="let location of locations" class="item app-location-list-item" [location]="location"
-  (click)="showDetails(location)"></a>
+  [routerLink]="location.title"></a>
 </div>
