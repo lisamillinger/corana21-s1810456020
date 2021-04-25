@@ -11,10 +11,12 @@ import { allLocationsService } from './shared/all-locations.service';
 import { AppRoutingModule } from './app-routing-module';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { VaccinationListComponent } from './vaccination-list/vaccination-list.component';
+import { VaccinationDetailsComponent } from './vaccination-details/vaccination-details.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule ],
-  declarations: [ AppComponent, HelloComponent, LocationListComponent, LocationListItemComponent, LocationDetailsComponent, HomeComponent],
+  declarations: [ AppComponent, HelloComponent, LocationListComponent, LocationListItemComponent, LocationDetailsComponent, HomeComponent, VaccinationListComponent, VaccinationDetailsComponent, VaccinationDetailsComponent],
   bootstrap:    [ AppComponent ],
   providers: [allLocationsService]
 })
