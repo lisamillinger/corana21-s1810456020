@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 import { Location } from '../shared/location';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { allLocationsService } from "../shared/all-locations.service";
+import { LocationFactory } from '../shared/location-factory';
 
 @Component({
   selector: 'app-location-details',
@@ -10,17 +11,26 @@ import { allLocationsService } from "../shared/all-locations.service";
 })
 
 export class LocationDetailsComponent implements OnInit {
-  location: Location;
+  location: Location = LocationFactory.empty();
 
   constructor(
     private app: allLocationsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
     const params = this.route.snapshot.params;
-    this.location = this.app.getSingle(params['title']);
+    this.app.getSingle(params['title']).subscribe(l => this.location = l);
      }
+
+     removeLocation() {
+    if (confirm('Ort wirklich löschen?')) {
+    this.app.remove(this.location.title).subscribe(res => this.router.navigate(['../'], { relativeTo: this.route }));
+}
+     }
+
+
 
 
 }
