@@ -9,7 +9,7 @@ import { HttpClient } from "@angular/common/http";
 
 @Injectable()
 export class allLocationsService {
-  private api = "http://corana21.s1810456020.student.kwmhgb.at/api";
+  private api = "https://corana21.s1810456020.student.kwmhgb.at/api";
 
   constructor(private http: HttpClient) {}
 
