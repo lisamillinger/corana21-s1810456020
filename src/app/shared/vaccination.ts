@@ -7,6 +7,7 @@ export class Vaccination {
     public date: Date,
     public max_participants: number,
     public current_registrations: number,
+    public location_id: number,
     public full: boolean
   ) {}
 }
