@@ -1,10 +1,10 @@
-<p> hello from the list </p>
+<p> hello from the detail</p>
 
 <div class="ui grid" *ngIf="location">
-  <p>hello again </p>
   <div class="twelve wide column">
-    <h1 class="ui header">{{ location.title }} </h1>
-    <h3 class="ui header"> {{ location.address }} </h3>
+
+    <h1 class="ui header">{{ location?.title }} </h1>
+    <h3 class="ui header"> {{ location?.address }} </h3>
 
     <span *ngFor="let vaccination of location.vaccinations">
           <b>{{ vaccination.title }} </b> <br>
@@ -17,5 +17,6 @@
   </div>
 
   <button [routerLink]="'/locations'" class="ui red button">Zurück zur Listenansicht</button>
+  <button class="ui tiny red labeled icon button" (click)="removeLocation()">Ort löschen</button>
 
 </div>

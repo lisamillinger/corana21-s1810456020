@@ -23,7 +23,6 @@ totalAngularPackages: any;
   }
 
   getSingle(title: string): Observable<Location> {
-    console.log("hello from get single")
     return this.http
       .get<Location>(`${this.api}/locations/${title}`)
       .pipe(retry(3))

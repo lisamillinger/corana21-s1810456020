@@ -20,9 +20,9 @@ export class LocationDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log("hello");
+    console.log(this.location.id);
     const params = this.route.snapshot.params;
-    this.app.getSingle(params['title']).subscribe(l => this.location = l);
+    this.app.getSingle(params['title']).subscribe(b => this.location = b);
      }
 
      removeLocation() {

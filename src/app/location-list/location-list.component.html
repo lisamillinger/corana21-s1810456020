@@ -1,8 +1,8 @@
-<p>
-  location-list works!
-</p>
-
 <div class="ui middle aligned section divided list">
   <a *ngFor="let location of locations" class="item app-location-list-item" [location]="location"
   [routerLink]="location.title"></a>
+  <div *ngIf="!locations" class="ui active dimmer">
+    <div class="ui large text loader">Daten werden geladen...</div>
+  </div>
+  <p *ngIf="locations && !locations.length">Es wurden noch keine Impfungen eingetragen.</p>
 </div>
