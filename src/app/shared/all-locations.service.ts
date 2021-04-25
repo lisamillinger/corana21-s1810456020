@@ -15,15 +15,11 @@ totalAngularPackages: any;
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Array<Location>> {
-   
-   console.log("hello from getAll()")
 
     return this.http
       .get(`${this.api}/locations`)
       .pipe(retry(3))
-      .pipe(catchError(this.errorHandler));
-
-     
+      .pipe(catchError(this.errorHandler));  
   }
 
   getSingle(title: string): Observable<Location> {
