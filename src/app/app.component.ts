@@ -1,17 +1,23 @@
 import { Component, VERSION } from "@angular/core";
 import { Location } from "./shared/location";
+import 'rxjs/add/operator/map';
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "bs-root",
   templateUrl: './app.component.html'
 })
+
 export class AppComponent {
-  listOn = true;
-  detailsOn = false;
+  myValue: string;
 
   location: Location;
 
-  showList() {
+  /*constructor(private http: HttpClient) {
+   
+  }*/
+
+  /*showList() {
     this.detailsOn = false;
     this.listOn = true;
   }
@@ -20,7 +26,10 @@ export class AppComponent {
     this.location = location;
     this.listOn = false;
     this.detailsOn = true;
-  }
+  }*/
+
+  //listOn = true;
+  //detailsOn = false;
 
   name = "Angular " + VERSION.major;
 

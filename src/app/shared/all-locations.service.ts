@@ -5,6 +5,9 @@ import { People } from "./people";
 
 @Injectable()
 export class allLocationsService {
+
+  private api = "http://corana21.s1810456020.student.kwmhgb.at/api";
+  
   locations: Location[];
 
   constructor() {
