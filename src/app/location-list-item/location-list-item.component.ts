@@ -12,6 +12,8 @@ export class LocationListItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
+   
+  
+}
 
 }

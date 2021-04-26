@@ -1,16 +1,19 @@
 
     <div class="content">
       <div class="header">
-        {{ location.title }}
+        Titel des ORTES: {{ location.title }}
       </div>
       <div class="description">
-        {{ location.address }}
+       Adresse des ORTES: {{ location.address }}
         {{ location.post_code }}
         {{ location.city }}
       </div>
 
-
-      <div>{{ location["vaccination"]["0"]["title"] }}</div>
+      <br>
+    
+      TITEL IMPFUNG
+        <div>{{ location["vaccination"]["1"]["max_participants"] }}</div>
+        <div>{{ location["vaccination"]["1"]["title"] }}</div>
       <div class="metadata">
         <span *ngFor="let vaccination of location.vaccinations">
           
@@ -19,6 +22,8 @@
            
         </span>
         
+        
       </div>
+    
     </div>
   

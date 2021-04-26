@@ -11,7 +11,7 @@ import { LocationFactory } from '../shared/location-factory';
 })
 
 export class LocationDetailsComponent implements OnInit {
-  location: Location = LocationFactory.empty();
+  location: Location
 
   constructor(
     private app: allLocationsService,
@@ -20,7 +20,6 @@ export class LocationDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.location.id);
     const params = this.route.snapshot.params;
     this.app.getSingle(params['title']).subscribe(b => this.location = b);
      }
