@@ -2,7 +2,7 @@ import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 import { Location } from '../shared/location';
 import { ActivatedRoute, Router } from "@angular/router";
 import { allLocationsService } from "../shared/all-locations.service";
-import { LocationFactory } from '../shared/location-factory';
+//import { LocationFactory } from '../shared/location-factory';
 
 @Component({
   selector: 'app-location-details',

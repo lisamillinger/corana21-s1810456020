@@ -22,12 +22,27 @@ totalAngularPackages: any;
       .pipe(catchError(this.errorHandler));  
   }
 
+  getAllVaccinations(): Observable<Array<Vaccination>> {
+    return this.http
+      .get(`${this.api}/vaccinations`)
+      .pipe(retry(3))
+      .pipe(catchError(this.errorHandler));  
+  }
+
   getSingle(title: string): Observable<Location> {
     return this.http
       .get<Location>(`${this.api}/locations/${title}`)
       .pipe(retry(3))
       .pipe(catchError(this.errorHandler));
   }
+
+  getSingleVaccination(title: string): Observable<Vaccination> {
+    return this.http
+      .get<Vaccination>(`${this.api}/vaccination/${title}`)
+      .pipe(retry(3))
+      .pipe(catchError(this.errorHandler));
+  }
+
   create(location: Location): Observable<any> {
     return this.http
       .post(`${this.api}/location`, location)
@@ -50,48 +65,4 @@ totalAngularPackages: any;
   private errorHandler(error: Error | any): Observable<any> {
     return throwError(error);
   }
-
-  /*constructor() {
-    this.locations = [
-      new Location(
-        1,
-        5020,
-        "Salzburg",
-        "Zaunergasse 11",
-        "free vaccinations!",
-        "TEST",
-        [
-          new Vaccination(1, "IMPFUNG01", new Date(2021, 4, 5), 10, 5, false),
-          new Vaccination(4, "Impfung3", new Date(2032, 1, 1), 500, 499, false)
-        ]
-      ),
-      new Location(
-        2,
-        4232,
-        "Hagenberg",
-        "Softwarepark 23",
-        "study and impf",
-        "HGBIMPFTEST",
-        [new Vaccination(2, "Impfung02", new Date(2021, 1, 1), 50, 50, true)]
-      ),
-      new Location(
-        3,
-        4020,
-        "Linz",
-        "Pfarrgasse",
-        "eat and impf",
-        "FRONTFOOD IMPFUNG",
-        [new Vaccination(3, "Impfung03", new Date(2022, 9, 9), 12, 1, false)]
-      )
-    ];
-  }
-
-  getAll() {
-    return this.locations;
-  }
-
-  getSingle(title : string) : Location {
-    return this.locations.find(location => location.title === title);
-  }
-}*/
 }
