@@ -20,5 +20,4 @@ export class VaccinationListComponent implements OnInit {
     this.app.getAllVaccinations().subscribe(res => this.vaccinations = res);
     console.log(this.app);
   }
-
 }

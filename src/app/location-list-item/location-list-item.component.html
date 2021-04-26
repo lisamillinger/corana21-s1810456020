@@ -11,17 +11,13 @@
 
       <br>
     
-      TITEL IMPFUNG
-        <div>{{ location["vaccination"]["1"]["max_participants"] }}</div>
-        <div>{{ location["vaccination"]["1"]["title"] }}</div>
+     <span *ngIf="location.vaccinations && location.vaccinations[0]"> hello </span>
       <div class="metadata">
-        <span *ngFor="let vaccination of location.vaccinations">
-          
-          <b>{{ vaccination.title }} </b> <br>
-          <b>WANN? </b> {{ vaccination.date }}
-           
-        </span>
         
+        <div>{{ location["vaccination"]["0"]["max_participants"] }}</div>
+        <div>{{ location["vaccination"]["0"]["title"] }}</div>
+          
+          
         
       </div>
     
