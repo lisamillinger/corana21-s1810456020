@@ -9,5 +9,9 @@
     Adresse des ORTES: {{ location.address }} {{ location.post_code }} {{ location.city }}
   </div>
 
+  <div *ngFor="let vaccination of this.location.vaccinations">
+   IMPFUNG: {{ vaccination.title }}
+  </div>
+
   
 </div>
