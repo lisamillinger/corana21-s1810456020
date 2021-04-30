@@ -1,7 +1,6 @@
 import { Vaccination } from "./vaccination";
 
 export class Location {
-  location: Location;
   constructor(
     public id: number,
     public post_code: number,
@@ -9,6 +8,6 @@ export class Location {
     public address: string,
     public description: string,
     public title: string,
-    public vaccinations: Vaccination[]
+    public vaccinations?: Vaccination[]
   ) {}
 }

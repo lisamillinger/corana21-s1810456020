@@ -1,17 +1,17 @@
 
 <div class="content">
 
-
   <div class="header">
     Titel des ORTES: {{ location.title }}
   </div>
   <div class="description">
     Adresse des ORTES: {{ location.address }} {{ location.post_code }} {{ location.city }}
   </div>
+  <span *ngFor="let vaccination of location.vaccinations;">
+        TITEL {{ vaccination.title }}
+    </span>
 
-  <div *ngFor="let vaccination of this.location.vaccinations">
-   IMPFUNG: {{ vaccination.title }}
-  </div>
+  
 
   
 </div>
