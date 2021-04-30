@@ -15,7 +15,6 @@ totalAngularPackages: any;
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Array<Location>> {
-
     return this.http
       .get(`${this.api}/locations`)
       .pipe(retry(3))
@@ -24,10 +23,11 @@ totalAngularPackages: any;
 
   getSingle(title: string): Observable<Location> {
     return this.http
-      .get<Location>(`${this.api}/locations/${title}`)
+      .get<Location>(`${this.api}/location/${title}`)
       .pipe(retry(3))
       .pipe(catchError(this.errorHandler));
   }
+  
   create(location: Location): Observable<any> {
     return this.http
       .post(`${this.api}/location`, location)

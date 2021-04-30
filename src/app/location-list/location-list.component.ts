@@ -16,7 +16,6 @@ export class LocationListComponent implements OnInit {
   constructor(private app: allLocationsService) {}
 
   ngOnInit() {
-    console.log("hello from location-list ngOnInit");
     this.app.getAll().subscribe(res => this.locations = res);
     console.log(this.app);
   }
