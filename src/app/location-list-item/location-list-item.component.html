@@ -1,5 +1,7 @@
 <div class="content">
 
+<div *ngIf="location.vaccinations && location.vaccinations[0]">
+      {{location.vaccinations[0].id}}</div>
 
   <div class="header">
     Titel des ORTES: {{ location.title }}
@@ -7,6 +9,7 @@
   <div class="description">
     Adresse des ORTES: {{ location.address }} {{ location.post_code }} {{ location.city }}
   </div>
+
+  
  
- 
- 
+
