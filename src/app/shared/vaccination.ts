@@ -1,5 +1,3 @@
-import { Location } from "./location";
-
 export class Vaccination {
   constructor(
     public id: number,

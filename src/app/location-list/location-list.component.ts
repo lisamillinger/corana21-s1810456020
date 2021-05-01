@@ -11,16 +11,11 @@ import { allLocationsService } from '../shared/all-locations.service';
 export class LocationListComponent implements OnInit {
   
   locations: Location[];
-  @Output() showDetailsEvent = new EventEmitter<Location>();
 
   constructor(private app: allLocationsService) {}
 
   ngOnInit() {
-    this.app.getAll().subscribe(res => this.locations = res);
-    console.log(this.app);
-  }
-
-  showDetails(location: Location) {
-    this.showDetailsEvent.emit(location);
+    this.app.getAll().subscribe(res => (this.locations = res));
+    console.log("observer resgitred");
   }
 }

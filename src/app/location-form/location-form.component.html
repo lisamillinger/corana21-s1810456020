@@ -1,0 +1,79 @@
+<h1>Hier können Orte und Impfungen angelegt werden</h1>
+
+<form class="ui large form" [formGroup]="locationForm" (ngSubmit)="submitForm()">
+
+  <input type="hidden" name="id">
+
+  <div class="field">
+    <label>Titel der Impflocation</label>
+    <input formControlName="title">
+    <div *ngIf="errors.title" class="ui negative message"> {{ errors.title
+      }} </div>
+  </div>
+
+  <div class="field">
+    <label>Postleitzahl</label>
+    <input formControlName="post_code">
+    <div *ngIf="errors.post_code" class="ui negative message"> {{ errors.post_code
+      }} </div>
+  </div>
+
+  <div class="field">
+    <label>Adresse</label>
+    <input formControlName="address">
+    <div *ngIf="errors.address" class="ui negative message"> {{ errors.address
+      }} </div>
+  </div>
+
+  <div class="field">
+    <label>Beschreibung</label>
+    <input formControlName="description">
+  </div>
+
+
+
+  <div class="field">
+
+    <label>Impfungen</label>
+
+    <div formArrayName="vaccinations">
+
+
+        <input type="hidden" name="id">
+
+        <div class="field">
+          <label>Titel</label>
+          <input formControlName="title2">
+          <div *ngIf="errors.title2" class="ui negative message"> {{ errors.title2
+            }} </div>
+        </div>
+
+        <div class="field">
+          <label>Datum</label>
+          <input type="date" formControlName="date">
+          <div *ngIf="errors.date" class="ui negative message">{{errors.date }}</div>
+        </div>
+
+        <div class="field">
+          <label>Maximale Teilnehmer*innen</label>
+          <input type="number" formControlName="max_participants">
+          <div *ngIf="errors.max_participants" class="ui negative message">{{errors.max_participants }}</div>
+
+        <div class="field">
+          <label>Aktuelle Registrierungen</label>
+          <input type="number" formControlName="current_registrations">
+          <div *ngIf="errors.current_registrations" class="ui negative message">{{errors.current_registrations }}</div>
+        </div>
+
+          <div class="field">
+          <label>Keine Anmeldung mehr möglich</label>
+          <input type="checkbox" formControlName="isFull">
+        </div>
+
+      </div>
+    </div>
+   
+  </div>
+  <button type="submit" class="ui button"
+[disabled]="locationForm.invalid">Speichern</button>
+</form>

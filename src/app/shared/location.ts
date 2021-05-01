@@ -1,4 +1,7 @@
 import { Vaccination } from "./vaccination";
+export { Vaccination } from "./vaccination";
+import { People } from "./people";
+export { People } from "./people";
 
 export class Location {
   constructor(
